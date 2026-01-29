@@ -3,15 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/Astha302/FrameworkOrangeHrm.git'
-            }
-        }
-
         stage('Build & Test') {
             steps {
+                bat 'mvn -version'
                 bat 'mvn clean test'
             }
         }
